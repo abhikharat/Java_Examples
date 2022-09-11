@@ -20,7 +20,17 @@ class Product{
         this.price = price;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public float getPrice() {
+        return price;
+    }
 }
 
 public class JavaStreamExample {
@@ -90,6 +100,14 @@ public class JavaStreamExample {
         Map<Integer,String> pMap=pList.stream()
                 .collect(Collectors.toMap(p->p.id,p->p.name));
         System.out.println("Converted Map of Product : "+pMap);
+
+        //Methode refering in stream
+
+        List<Float> priceList=pList.stream()
+                .map(Product::getPrice)
+                .collect(Collectors.toList());
+
+        System.out.println("Method reference in stream : "+priceList);
 
     }
 
