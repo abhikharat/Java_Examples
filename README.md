@@ -4,3 +4,4 @@ Java 8 related example like below.
 2. Interface with default method.
 3. Stream Examples.
 4. Stream with filter.
+5. Base64 Encoder/Decoder example.
