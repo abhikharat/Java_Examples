@@ -4,6 +4,7 @@ import sun.awt.geom.AreaOp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -85,7 +86,10 @@ public class JavaStreamExample {
 
         System.out.println(setOfPrice);
 
-
+        //convert Product list into Map
+        Map<Integer,String> pMap=pList.stream()
+                .collect(Collectors.toMap(p->p.id,p->p.name));
+        System.out.println("Converted Map of Product : "+pMap);
 
     }
 
